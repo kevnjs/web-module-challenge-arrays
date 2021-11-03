@@ -301,7 +301,7 @@ const regionalFlavors = [
 function getRandomFlavors(array1, array2, array3, array4){
   let allArrays = array1.concat(array2, array3, array4);
   let randomFlavors = [];
-  for (i = 0; i < 31; i++) {
+  for (let i = 0; i < 31; i++) {
     let random = Math.floor(Math.random() * allArrays.length);
     randomFlavors.push(allArrays[random]);
   }
