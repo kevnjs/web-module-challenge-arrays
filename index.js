@@ -102,7 +102,7 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
-  const removeFlavor = array.pop()
+  const removeFlavor = array.pop();
   return array;
 }
 
@@ -119,7 +119,7 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
+function getFlavorByIndex(array, index) {
   return array[index];
 }
 
@@ -140,8 +140,12 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array, flavor){
-  array.splice(flavor, 1);
-  return array;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === flavor) {
+      array.splice(i, 1);
+      return array;
+    }
+  }
 }
 
 
@@ -167,15 +171,15 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
+  const newArray = []
   for (let i = 0; i < array.length; i++) {
     if (array[i].includes(string)) {
-      const newArray = [];
       newArray.push(array[i]);
-      return newArray;
     }
   }
+  return newArray;
 }
-
+console.log(filterByWord(originalFlavors, 'Chocolate'))
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
